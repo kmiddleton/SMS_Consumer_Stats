@@ -1,0 +1,55 @@
+---
+title: "Understanding Science News"
+subtitle: "What do those statistics really say?"
+author: "Kevin Middleton"
+date: "2016/12/12"
+output:
+  xaringan::moon_reader:
+    seal: false
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      beforeInit: "macros.js"
+    css: ["default.css"]
+
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+```
+
+class: center, middle, inverse, title-slide
+
+# Understanding Science News
+
+## What do those statistics really say?
+
+### Kevin M. Middleton, Ph.D.
+
+#### Department of Pathology & Anatomical Sciences<br>University of Missouri School of Medicine
+
+<br>
+
+![:scale 70%](images/IA_Trex_logo.png)
+
+???
+
+https://github.com/yihui/xaringan/wiki
+
+---
+class: invert, center, middle
+
+background-image: url(images/GL_Cyclotosaur.jpg)
+background-size: contain
+
+---
+class: center, middle
+
+Some text
+
+![:scale 25%](images/Bat_Flying.jpg)
+
+More text
+

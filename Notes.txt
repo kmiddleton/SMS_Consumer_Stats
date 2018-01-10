@@ -1,0 +1,4 @@
+"Teaching Statistics: A Bag of Tricks"
+
+https://strengejacke.files.wordpress.com/2017/12/bayesian-regression-models.pdf
+
