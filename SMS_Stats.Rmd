@@ -39,17 +39,125 @@ class: center, middle, inverse, title-slide
 https://github.com/yihui/xaringan/wiki
 
 ---
-class: invert, center, middle
+class: inverse, center, middle
 
 background-image: url(images/GL_Cyclotosaur.jpg)
 background-size: contain
 
 ---
+class: inverse, center, middle
+
+![:scale 45%](images/Pteropus.jpg)
+![:scale 45%](images/Bat_Flying.jpg)
+
+---
+class: inverse, center, middle
+
+![:scale 50%](images/CBA.jpg)
+
+---
+class: inverse, center, middle
+
+![:scale 45%](images/C57.jpg)
+![:scale 45%](images/Mouse_Bone_Comparison.png)
+
+---
+class: inverse, center, middle
+
+![:scale 100%](images/Pedigree.jpg)
+
+---
+class: inverse, center, middle
+
+![:scale 100%](images/Anatomy.png)
+
+---
 class: center, middle
 
-Some text
+## Why am I talking about statistics today?
 
-![:scale 25%](images/Bat_Flying.jpg)
+---
 
-More text
+# Statistics in your daily life
 
+Example
+
+Example
+
+---
+
+# Statistics affects you
+
+Example
+
+Example
+
+---
+
+# Inference, not statistics
+
+## Making decisions based on data
+
+---
+
+# Example 1
+
+---
+
+# Example 2
+
+---
+
+# Being a skeptical statistical consumer
+
+---
+
+# Digging deeper
+
+---
+
+# Is most published research false?
+
+---
+
+# The perils of null hypothesis testing
+
+---
+
+# Chimera of Fisher and Neyman/Pearson
+
+---
+
+# Garden of forking paths
+
+---
+
+# Is all hope lost?
+
+---
+
+# ASA statement
+
+---
+
+# (Re)emergence of Bayesian inference
+
+---
+
+# Bayes history
+
+---
+
+# Your brain as a Bayesian engine
+
+---
+
+# Prior knowledge?
+
+---
+
+# Examples
+
+---
+
+# Being a good consumer
