@@ -2,6 +2,8 @@
 
 Statistics are a fundamental part of our lives and impact decisions that we make and decisions that affect us. While scientists use statistics to draw conclusions from data and understand the world around us, those conclusions often make it into the popular media. I will talk about how the public can become better statistical consumers, filtering the important from the not-so-important and in the process better understanding their world.
 
+https://www.wiley.com/en-us/Introduction+to+Bayesian+Statistics%2C+3rd+Edition-p-9781118593226
+
 https://strengejacke.files.wordpress.com/2017/12/bayesian-regression-models.pdf
 
 Childhood mortality
