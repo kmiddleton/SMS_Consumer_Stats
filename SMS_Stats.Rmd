@@ -89,6 +89,11 @@ class: center, middle
 
 # Statistics in your daily life
 
+> "For what is improbable does happen, and therefore it is probable
+that improbable things will happen. Granted this, one might argue
+that 'what is improbable is probable'. But this is not true absolutely." (Aristotle, *Rhetoric*)
+
+
 Example
 
 Example
@@ -103,9 +108,44 @@ Example
 
 ---
 
+# Common internet searches involving probability (David Aldous):
+
+- chance of pregnancy on pill
+- how to improve chance of getting pregnant
+- chance of getting pregnant at age 41
+- chance of getting pregnant while breastfeeding
+- can you increase your chance of having a girl
+- if twins run in my family what's my chance of having them?
+- chance of siblings both having autism 
+
+---
+
+
+- probability of  flopping a set with pocket pair in poker 
+- chance of surviving severe head injury 
+- chance of snow in Austin Texas 
+- is there chance of flood in Saint Charles, Illinois today? 
+- calculate my chance of getting to university of washington
+- what are the chance of becoming a golf professional
+
+---
+
+- probability of having an adverse reaction to amoxicillin
+- does hypothyroid in women increase chance of liver cancer?
+- does progesterone increase chance of breast cancer
+- which treatment has the least chance of prostate cancer recurring?
+- what is the chance of relapse in a low risk acute lymphoblastic lukemia patient
+- chance of getting a brain tumor 
+
+---
+
 # Inference, not statistics
 
 ## Making decisions based on data
+
+- how to travel
+- how much to exercise
+- what to eat
 
 ---
 
@@ -126,6 +166,12 @@ Example
 ---
 
 # Digging deeper
+
+---
+
+Real probabilities
+
+https://www.livescience.com/3780-odds-dying.html
 
 ---
 
