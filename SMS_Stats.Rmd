@@ -71,11 +71,7 @@ class: inverse, center, middle
 ![:scale 100%](https://i.imgur.com/wGMIxMn.jpg)
 
 ---
-class: inverse, center, middle
 
-![:scale 100%](https://i.imgur.com/wGMIxMn.png)
-
----
 class: inverse, center, middle
 
 ![:scale 100%](https://i.imgur.com/D2JySAi.png)
@@ -92,7 +88,6 @@ class: center, middle
 > "For what is improbable does happen, and therefore it is probable
 that improbable things will happen. Granted this, one might argue
 that 'what is improbable is probable'. But this is not true absolutely." (Aristotle, *Rhetoric*)
-
 
 Example
 
@@ -161,17 +156,72 @@ Example
 
 ---
 
+# We are pretty bad at thinking about probabilities
+
+We should be considering how probable are certain events.
+
+1. Get the flu
+2. Win Powerball lottery
+3. Death by plane crash
+
+---
+
+# History of probability
+
+---
+
+# UK birth control example
+
+---
+
+# Thinking about the base rate
+
+---
+
 # Being a skeptical statistical consumer
 
+Factors at odds with each other:
+
+1. Scientists & grant funding agencies want to have their research published
+2. Scientific journals and unversities want to gain publicity
+3. Government wants to protect its citizens (FDA, CDC, etc.)
+4. Newspapers want to make money
+5. *You* want to make decisions that impact your life
+
 ---
 
-# Digging deeper
-
----
-
-Real probabilities
+# Thinking critically about what you read
 
 https://www.livescience.com/3780-odds-dying.html
+
+---
+
+# Every statistical story has context
+
+---
+
+# US *highest* 10% age-standardized deaths from kidney cancer
+
+![:scale 100%](https://i.imgur.com/yHx5MNh.png)
+
+---
+
+# US *lowest* 10% age-standardized deaths from kidney cancer
+
+![:scale 100%](https://i.imgur.com/Jb6gC8k.png)
+
+---
+
+# Childhood mortality
+
+
+---
+
+# Cancer Food Additives
+
+---
+
+# Foods and allergies
 
 ---
 
