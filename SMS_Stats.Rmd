@@ -199,16 +199,82 @@ https://www.livescience.com/3780-odds-dying.html
 # Every statistical story has context
 
 ---
+class: center
 
-# US *highest* 10% age-standardized deaths from kidney cancer
+# Association $\neq$ causation
 
-![:scale 100%](https://i.imgur.com/yHx5MNh.png)
+
+![:scale 70%](https://i.imgur.com/bNr4JAW.png)
+
+> "Figures obtained by the BBC under the Freedom of Information Act found the number of prescriptions for the most common group of antidepressants rose by 43 per cent during the period covering the banking crisis and housing crash."
 
 ---
 
-# US *lowest* 10% age-standardized deaths from kidney cancer
+# Correlation/Association vs. Causation
 
-![:scale 100%](https://i.imgur.com/Jb6gC8k.png)
+Usually we are interested in causation.
+
+- But two variables can have a significant association (correlation) without any causal basis.
+
+- Life expectancy vs. Per capita televisions
+
+Confounding variables (overall wealth) probably underlie the correlation.
+
+– This is one of the main limitations of observational studies.
+
+---
+
+# NY Times: "Alcohol Worsens Allergies"
+
+Nihlen et al. (2005) Alcohol-induced upper airway symptoms: prevalence and co-morbidity. Respir Med 99: 762–769.
+
+> A postal questionnaire focused on respiratory diseases and symptoms was sent to 11,933 randomly selected adult individuals. Subjects with ANS, n = 316 (3.4%) received a second questionnaire focusing on this condition. Nine thousand three hundred and sixteen (78%) subjects answered the first and 228 (72%) the second questionnaire. Two-thirds of the subjects with ANS were women. Red wine and white wine were the most frequent triggers of ANS, reported by 83% and 31% of the subjects, respectively.
+
+---
+
+# NY Times: "Alcohol Worsens Allergies"
+
+Bendtsen et al. (2007) Alcohol consumption and the risk of self-reported perennial and seasonal allergic rhinitis in young adult women in a population-based cohort study. Clin Exp Allergy 38: 1179–1185.
+
+METHODS: Five thousand eight hundred and seventy Danish women aged 20-29 years participated in a prospective cohort study, and were free of seasonal and perennial AR at baseline (1991-1993). Alcohol consumption was assessed by a food frequency questionnaire. The main outcome measures were self-reported information on seasonal and perennial AR debuting during a mean follow-up period of 7.8 years. RESULTS: During follow-up, 831 women developed seasonal AR and 523 women developed perennial AR, corresponding to 14% and 9%. Alcohol consumption was positively associated with the risk of developing perennial AR. The adjusted odds ratio (OR) for perennial AR was 1.78 (95% CI, 1.13-2.80) among women drinking more than 14 drinks/week compared with women drinking <1 drink/week.
+
+---
+
+# “Alcohol Worsens Allergies”
+
+Beware of confounding variables.
+
+Histamines can cause allergies and allergy-related symptoms
+
+– Lots of foods contain or release histamines.
+
+Both studies were among northern European populations of women.
+
+---
+
+# "Alcohol Worsens Allergies"
+
+Histamine-Rich Foods:
+
+- Alcoholic beverages, especially beer and wine; Anchovies; Avocados; Cheeses, especially aged or fermented cheese, such as parmesan, blue and Roquefort; Cider and home-made root beer; Dried fruits such as apricots, dates, prunes, figs and raisins; Eggplant; Fermented foods, such as pickled or smoked meats, sauerkraut, etc.; Mackerel; Mushrooms; Processed meats - sausage, hot dogs, salami, etc.; Sardines; Smoked fish - herring, sardines, etc.; Sour cream, sour milk, buttermilk, yogurt - especially if not fresh; Soured breads, such as pumpernickel, coffee cakes and other foods made with large amounts of yeast.; Spinach; Tomatoes; Vinegar or vinegar-containing foods, such as mayonnaise, salad dressing, ketchup, chili sauce, pickles, pickled beets, relishes, olives; Yogurt 
+
+Histamine-Releasing Foods:
+
+- Alcohol; Bananas; Chocolate; Eggs; Fish; Milk; Papayas; Pineapple; Shellfish; Strawberries; Tomatoes
+
+---
+class: center
+
+## US *highest* 10% age-standardized deaths from kidney cancer
+
+![:scale 90%](https://i.imgur.com/yHx5MNh.png)
+
+---
+class: center
+
+## US *lowest* 10% age-standardized deaths from kidney cancer
+
+![:scale 90%](https://i.imgur.com/Jb6gC8k.png)
 
 ---
 
