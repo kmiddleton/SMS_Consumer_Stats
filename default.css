@@ -97,6 +97,13 @@ a, a > code {
 .pull-right ~ * {
   clear: both;
 }
+
+.center {
+    margin: auto;
+    width: 100%;
+    padding: 10px;
+}
+
 img, video, iframe {
   max-width: 100%;
 }

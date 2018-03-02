@@ -18,6 +18,9 @@ output:
 
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE)
+library(tidyverse)
+library(cowplot)
+library(wesanderson)
 ```
 
 class: center, middle, inverse, title-slide
@@ -57,24 +60,24 @@ Bats
 ---
 class: inverse, center, middle
 
-![:scale 50%](https://i.imgur.com/xQeCWV7.png)
+![:scale 45%](https://i.imgur.com/xQeCWV7.png)
 
 ---
 class: inverse, center, middle
 
-![:scale 50%](https://i.imgur.com/VNMbpjx.png)
-![:scale 45%](https://i.imgur.com/js5ZXui.png)
+![:scale 48%](https://i.imgur.com/VNMbpjx.png)
+![:scale 44%](https://i.imgur.com/js5ZXui.png)
 
 ---
 class: inverse, center, middle
 
-![:scale 100%](https://i.imgur.com/wGMIxMn.jpg)
+![:scale 90%](https://i.imgur.com/wGMIxMn.jpg)
 
 ---
 
 class: inverse, center, middle
 
-![:scale 100%](https://i.imgur.com/D2JySAi.png)
+![:scale 90%](https://i.imgur.com/D2JySAi.png)
 
 ---
 class: center, middle
@@ -90,7 +93,9 @@ that improbable things will happen. Granted this, one might argue
 that 'what is improbable is probable'. But this is not true
 absolutely." (Aristotle, *Rhetoric*)
 
-Probable vs. improbable events
+.center[
+**Probable vs. improbable events**
+]
 
 ---
 
@@ -102,7 +107,7 @@ Example
 
 ---
 
-## Common internet searches involving probability (David Aldous):
+## Common internet searches:
 
 - chance of pregnancy on pill
 - how to improve chance of getting pregnant
@@ -114,7 +119,7 @@ Example
 
 ---
 
-## Common internet searches involving probability (David Aldous):
+## Common internet searches:
 
 - probability of  flopping a set with pocket pair in poker 
 - chance of surviving severe head injury 
@@ -125,7 +130,7 @@ Example
 
 ---
 
-## Common internet searches involving probability (David Aldous):
+## Common internet searches:
 
 - probability of having an adverse reaction to amoxicillin
 - does hypothyroid in women increase chance of liver cancer?
@@ -165,6 +170,16 @@ We should be considering how probable are certain events.
 1. Get the flu
 2. Win Powerball lottery
 3. Death by plane crash
+4. Being strangled by your bedsheets
+
+---
+
+## We are pretty bad at thinking about probabilities
+
+Which is more probable?
+
+1. Jane is a biologist
+2. Jane is a biologist and is right handed
 
 ---
 
@@ -201,6 +216,20 @@ https://www.livescience.com/3780-odds-dying.html
 ## Every statistical story has context
 
 ---
+class: center
+
+## *Highest* 10% age-standardized deaths from kidney cancer
+
+![:scale 100%](https://i.imgur.com/yHx5MNh.png)
+
+---
+class: center
+
+## *Lowest* 10% age-standardized deaths from kidney cancer
+
+![:scale 100%](https://i.imgur.com/Jb6gC8k.png)
+
+---
 
 ## Association $\neq$ causation
 
@@ -218,9 +247,10 @@ https://www.livescience.com/3780-odds-dying.html
 
 Usually we are interested in causation.
 
-- But two variables can have a significant association without any *direct* causal basis.
-    - Life expectancy vs. Per capita televisions
-    - Chocolate consumption and electricty usage in Australia 1950-2000
+- Two variables can have a significant association without any *direct* causal basis.
+- Life expectancy vs. Per capita televisions
+
+--
 
 Confounding variables (overall wealth) probably underlie the correlation.
 
@@ -232,6 +262,143 @@ http://tylervigen.com/spurious-correlations
 
 ---
 
+## Do chocolate and beer drive Australian energy production?
+
+```{r echo=FALSE, fig.height=6, fig.width=10}
+CBE <- suppressMessages(read_delim("cbe.txt", delim = "\t"))
+CBE$Date <- seq(from = as.Date("1958-1-1"),
+                by = "month",
+                length.out = nrow(CBE))
+
+cor_choc <- paste("Correlation =", round(cor(CBE$choc, CBE$elec), 2))
+cor_beer <- paste("Correlation =", round(cor(CBE$beer, CBE$elec), 2))
+
+CBE %>% gather(key = "key", value = "value", -Date) %>% 
+  mutate(label = case_when(key == "choc" ~ "Chocolate\n(tons)",
+                           key == "beer" ~ "Beer\n(ML)",
+                           key == "elec" ~ "Electricity\n(million of kWh)")) %>% 
+  ggplot(aes(x = Date, y = value, color = label)) +
+  geom_line(size = 1.5) +
+  facet_grid(label ~ ., scales = "free", switch = "y") +
+  scale_y_continuous(position = "right") +
+  scale_color_manual(values = wes_palette("Cavalcanti", 3)) +
+  theme(legend.position = "none",
+        axis.title.y = element_blank(),
+        axis.title.x = element_blank(),
+        text = element_text(size = 20),
+        axis.text = element_text(size = 18))
+```
+
+---
+
+## Do chocolate and beer drive Australian energy production?
+
+```{r echo=FALSE, fig.height=6, fig.width=10}
+CBE <- suppressMessages(read_delim("cbe.txt", delim = "\t"))
+CBE$Date <- seq(from = as.Date("1958-1-1"),
+                by = "month",
+                length.out = nrow(CBE))
+
+cor_choc <- paste("Correlation =", round(cor(CBE$choc, CBE$elec), 2))
+cor_beer <- paste("Correlation =", round(cor(CBE$beer, CBE$elec), 2))
+
+CBE %>% gather(key = "key", value = "value", -Date) %>% 
+  mutate(label = case_when(key == "choc" ~ "Chocolate\n(tons)",
+                           key == "beer" ~ "Beer\n(ML)",
+                           key == "elec" ~ "Electricity\n(million of kWh)")) %>% 
+  ggplot(aes(x = Date, y = value, color = label)) +
+  geom_line(size = 1.5) +
+  geom_vline(xintercept = as.Date("1975-1-1"), size = 1.5) +
+  facet_grid(label ~ ., scales = "free", switch = "y") +
+  scale_y_continuous(position = "right") +
+  scale_color_manual(values = wes_palette("Cavalcanti", 3)) +
+  theme(legend.position = "none",
+        axis.title.y = element_blank(),
+        axis.title.x = element_blank(),
+        text = element_text(size = 20),
+        axis.text = element_text(size = 18))
+```
+
+---
+
+## Do chocolate and beer drive Australian energy production?
+
+```{r echo=FALSE, fig.height=6, fig.width=10}
+CBE <- suppressMessages(read_delim("cbe.txt", delim = "\t"))
+CBE$Date <- seq(from = as.Date("1958-1-1"),
+                by = "month",
+                length.out = nrow(CBE))
+
+cor_choc <- paste("Correlation =", round(cor(CBE$choc, CBE$elec), 2))
+cor_beer <- paste("Correlation =", round(cor(CBE$beer, CBE$elec), 2))
+
+CBE %>% gather(key = "key", value = "value", -Date) %>% 
+  mutate(label = case_when(key == "choc" ~ "Chocolate\n(tons)",
+                           key == "beer" ~ "Beer\n(ML)",
+                           key == "elec" ~ "Electricity\n(million of kWh)")) %>% 
+  ggplot(aes(x = Date, y = value, color = label)) +
+  geom_line(size = 1.5) +
+  geom_vline(xintercept = as.Date("1975-1-1"), size = 1.5) +
+  facet_grid(label ~ ., scales = "free", switch = "y") +
+  scale_y_continuous(position = "right") +
+  scale_color_manual(values = wes_palette("Cavalcanti", 3)) +
+  theme(legend.position = "none",
+        axis.title.y = element_blank(),
+        axis.title.x = element_blank(),
+        text = element_text(size = 20),
+        axis.text = element_text(size = 18)) +
+  geom_text(data = data.frame(Date = as.Date("1958-1-1"),
+                              label = "Chocolate\n(tons)",
+                              value = 9000),
+            label = cor_choc, size = 8, hjust = 0) +
+  geom_text(data = data.frame(Date = as.Date("1958-1-1"),
+                              label = "Beer\n(ML)",
+                              value = 200),
+            label = cor_beer, size = 8, hjust = 0)
+
+```
+
+---
+
+## Does skiing make Idahoans less likely to get divorced?
+
+```{r echo=FALSE, fig.height=6, fig.width=10}
+Year <- c(2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009)
+Idaho_Divorces <- c(5.5, 5.3, 5.3, 5.2, 5, 5, 5, 4.9, 4.8, 5)	
+Ski_Revenue <- c(1551, 1635, 1801, 1827, 1956, 1989, 2178, 2257, 2476, 2438)
+D <- tibble(Year, Idaho_Divorces, Ski_Revenue)
+
+cor_lab <- paste("Correlation =", round(cor(Idaho_Divorces, Ski_Revenue), 2))
+
+D %>% gather(key = "key", value = "value", -Year) %>% 
+  mutate(label = if_else(key == "Idaho_Divorces",
+                         "Divorce Rate in Idaho\n(per 1000 people)",
+                         "Ski Facility Revenue\n(millions of dollars)")) %>% 
+  ggplot(aes(x = Year, y = value, color = label)) +
+  geom_point(size = 5) +
+  geom_line(size = 2) +
+  facet_grid(label ~ ., scales = "free", switch = "y") +
+  scale_x_continuous(breaks = 2000:2009) +
+  scale_y_continuous(position = "right") +
+  scale_color_manual(values = wes_palette("FantasticFox")) +
+  theme(legend.position = "none",
+        axis.title.y = element_blank(),
+        text = element_text(size = 20),
+        axis.text = element_text(size = 18)) +
+  geom_text(data = data.frame(Year = 2007,
+                              label = "Divorce Rate in Idaho\n(per 1000 people)",
+                              value = 5.4),
+            label = cor_lab, size = 8)
+```
+
+---
+
+## "Alcohol May Set Off Allergies"
+
+![:scale 48%](https://i.imgur.com/8x5vZ81.png) ![:scale 48%](https://i.imgur.com/HCpKOIs.jpg)
+
+---
+
 ## "Alcohol May Set Off Allergies"
 
 ![:scale 100%](https://i.imgur.com/ZXtZHOz.png)
@@ -240,53 +407,94 @@ http://tylervigen.com/spurious-correlations
 
 ## "Alcohol May Set Off Allergies"
 
+**Methods**
+
+- 5870 Danish women ages 20-29
+- No allergic rhinitis (AR) at baseline
+- Self-reported behaviors and symptoms for ~8 years
+- Controlled for age, smoking, education, follow-up time, passive smoking in childhood and, parental asthma
+
+.footnote[
 Bendtsen et al. (2007) Alcohol consumption and the risk of self-reported perennial and seasonal allergic rhinitis in young adult women in a population-based cohort study. *Clin Exp Allergy* 38: 1179-1185.
-
-METHODS: Five thousand eight hundred and seventy Danish women aged 20-29 years participated in a prospective cohort study, and were free of seasonal and perennial AR at baseline (1991-1993). Alcohol consumption was assessed by a food frequency questionnaire. The main outcome measures were self-reported information on seasonal and perennial AR debuting during a mean follow-up period of 7.8 years.
-
----
-
-## "Alcohol May Set Off Allergies"
-
-RESULTS: During follow-up, 831 women developed seasonal AR and 523 women developed perennial AR, corresponding to 14% and 9%. Alcohol consumption was positively associated with the risk of developing perennial AR. The adjusted odds ratio (OR) for perennial AR was 1.78 (95% CI, 1.13-2.80) among women drinking more than 14 drinks/week compared with women drinking <1 drink/week.
+]
 
 ---
 
 ## "Alcohol May Set Off Allergies"
 
-Beware of confounding variables.
+**Results**
+
+- 831 develop seasonal AR
+- 523 develop perennial AR
+- "Alcohol consumption was positively associated with the risk of developing perennial AR ... among women drinking more than 14 drinks/week compared with women drinking <1 drink/week" (Odds Ratio = 1.78)
+
+---
+
+## The scourge of odds ratios
+
+$$OR = \frac{\text{Probability of developing AR}}{\text{Probability of not developing AR}}$$
+
+- Probabilities range from $0 \rightarrow 1$
+- Odds ratios range from $0 \rightarrow \infty$
+
+---
+
+## What is the base rate?
+
+523 out of 5870 develop perennial AR
+
+--
+
+$$\frac{523}{5870} = 9\%$$
+
+--
+
+Of that 9% who develop perennial AR, the comparison of >14 drinks per week relative to <1 drink per week, leads to a 78% increase in probability.
+
+---
+
+## Beware of confounding variables
 
 Histamines can cause allergies and allergy-related symptoms
 
 – Lots of foods contain or release histamines.
 
-Both studies were among northern European populations of women.
+--
+
+**Cuisine of Denmark**
+
+> Hot meals are traditionally prepared from ground meats, such as frikadeller (meat balls) and medisterpølse (spiced sausage), or from more substantial meat and fish dishes such as flæskesteg (roast pork with crackling) or kogt torsk (poached cod) with mustard sauce and trimmings.
 
 ---
 
-# "Alcohol Worsens Allergies"
+## Histamine-Rich Foods
 
-Histamine-Rich Foods:
-
-> *Alcoholic beverages, especially beer and wine*; Anchovies; Avocados; Cheeses, especially aged or fermented cheese, such as parmesan, blue and Roquefort; Cider and home-made root beer; Dried fruits such as apricots, dates, prunes, figs and raisins; Eggplant; Fermented foods, such as pickled or smoked meats, sauerkraut, etc.; Mackerel; Mushrooms; Processed meats - sausage, hot dogs, salami, etc.; Sardines; Smoked fish - herring, sardines, etc.; Sour cream, sour milk, buttermilk, yogurt - especially if not fresh; Soured breads, such as pumpernickel, coffee cakes and other foods made with large amounts of yeast.; Spinach; Tomatoes; Vinegar or vinegar-containing foods, such as mayonnaise, salad dressing, ketchup, chili sauce, pickles, pickled beets, relishes, olives; Yogurt 
-
-Histamine-Releasing Foods:
-
-> Alcohol; Bananas; Chocolate; Eggs; Fish; Milk; Papayas; Pineapple; Shellfish; Strawberries; Tomatoes
+*Alcoholic beverages, especially beer and wine*; Anchovies; Avocados; Cheeses, especially aged or fermented cheese, such as parmesan, blue and Roquefort; Cider; Dried fruits such as apricots, dates, prunes, figs and raisins; Eggplant; Fermented foods, such as pickled or smoked meats, sauerkraut, etc.; Mackerel; Mushrooms; Processed meats - sausage, salami, etc.; Sardines; Smoked fish - herring, sardines, etc.; Sour cream, sour milk, buttermilk, yogurt; Soured breads, such as pumpernickel, other foods made with large amounts of yeast.; Spinach; Tomatoes; Vinegar or vinegar-containing foods, such as mayonnaise, salad dressing, ketchup, chili sauce, pickles, pickled beets, relishes, olives
 
 ---
-class: center
 
-## US *highest* 10% age-standardized deaths from kidney cancer
+## "Alcohol Worsens Allergies"
 
-![:scale 90%](https://i.imgur.com/yHx5MNh.png)
+![](https://i.imgur.com/fAqxsVI.png)
+
+- Only >14 drinks compared to <1 drink is "significant"
+- Only 32 / 523 (6%) were in this group
+
+--
+
+.center[
+![:scale 60%](https://i.imgur.com/XbS8Hiq.png)
+]
 
 ---
-class: center
 
-## US *lowest* 10% age-standardized deaths from kidney cancer
+## "Alcohol Worsens Allergies"
 
-![:scale 90%](https://i.imgur.com/Jb6gC8k.png)
+.center[
+![:scale 100%](https://i.imgur.com/qzL0Ely.png)
+]
+
+Smoking 15 or more cigarettes a day reduces the likelihood of AR.
 
 ---
 
@@ -313,9 +521,13 @@ class: center
 
 # Chimera of Fisher and Neyman/Pearson
 
+![](https://i.imgur.com/8MATapS.jpg)
+
 ---
 
 # Garden of forking paths
+
+![](https://i.imgur.com/NEmGfdS.jpg)
 
 ---
 
@@ -334,35 +546,58 @@ class: center
 ## Bayes history
 
 ---
-class: center
 
-## Abraham de Moivre: In praise of gambling
+## In praise of gambling
 
-![:scale 30%](https://i.imgur.com/C4LOeAK.jpg)![:scale 27%](https://i.imgur.com/x0d2CX4.jpg)
+.center[
+![:scale 44%](https://i.imgur.com/C4LOeAK.jpg)![:scale 40%](https://i.imgur.com/x0d2CX4.jpg)
 
+Abraham de Moivre
+]
+
+---
+
+## In praise of gambling
+
+.pull-left[
+![:scale 90%](https://i.imgur.com/EyuUNeB.jpg)
+]
+
+.pull-right[
 What is the probability of getting dealt 4 aces in a poker hand?
+]
 
 $$\frac{4}{52}\frac{3}{51}\frac{2}{50}\frac{1}{49}\frac{48}{48}\times 5 = 0.000018 = 0.0018\%$$
 
+.center[
 (There is nothing special about aces.)
+]
 
 ---
 
 ## Inverse probability
 
-> Given that a poker player has dealt three hands in a row with four aces, *what is the probability that the deck is loaded*?
+> Given that a poker player has dealt three hands in a row with four aces, *what is the probability that the dealer is cheating*?
 
 ![:scale 33%](https://i.imgur.com/EyuUNeB.jpg)![:scale 33%](https://i.imgur.com/EyuUNeB.jpg)![:scale 33%](https://i.imgur.com/EyuUNeB.jpg)
+
+--
+
+$$0.000018^3 = 0.00000000000058\%$$
 
 ---
 
 # Thomas Bayes
+
+![](https://i.imgur.com/LlYJtH4.jpg)
 
 ---
 
 # Pierre Simon Laplace
 
 1774
+
+![](https://i.imgur.com/eWHLAUB.jpg)
 
 ---
 
@@ -379,9 +614,9 @@ $$P(b|a) = \frac{P(a|b)P(b)}{P(a)}$$
 
 $$P(b|a) = \frac{P(a|b)P(b)}{P(a)}$$
 
-$$P(hypothesis|data) = \frac{P(data|hypothesis)P(hypothesis)}{P(data)}$$
+$$P(hypothesis|data) = \frac{P(data|hypo)P(hypo)}{P(data)}$$
 
-$$P(hypothesis|data) = \frac{P(data|hypothesis)P(hypothesis)}{\Sigma_{h'\in H}P(d'|h')P(h')}$$
+$$P(hypothesis|data) = \frac{P(data|hypo)P(hypo)}{\Sigma_{h'\in H}P(d'|h')P(h')}$$
 
 Posterior probability is the product of the likelihood and prior normalized by their sum (to make the probability sum to 1).
 
@@ -397,31 +632,30 @@ $$P(roll~1, roll~1) = \frac{1}{6} \cdot \frac{1}{6} = \frac{1}{36}$$
 
 ## Your brain as a Bayesian engine
 
-.pull-left[Two movies opened last weekend.
+.pull-left[Two movies open the same week.
 
-> What is the probability that each will earn $200 million?
+**What is the probability that each will earn $200 million?**
 ]
 
 .pull-right[
-![:scale 100%](https://i.imgur.com/XVU4S2T.jpg)
+![:scale 80%](https://i.imgur.com/XVU4S2T.jpg)
 ]
 
 ---
 
 ## Your brain as a Bayesian engine
 
-.pull-left[Two movies opened last weekend.
+.pull-left[Two movies open the same week.
 
-> What is the probability that each will earn $200 million?
-
-- One movie earned $100 million in the first weekend
-- The other movie earned $1 million in the first weekend
-
+**What is the probability that each will earn $200 million?**
 ]
 
 .pull-right[
-![:scale 100%](https://i.imgur.com/XVU4S2T.jpg)
+![:scale 80%](https://i.imgur.com/XVU4S2T.jpg)
 ]
+
+1. One movie earned $100 million in the first weekend
+2. The other movie earned $1 million in the first weekend
 
 ---
 
@@ -455,7 +689,7 @@ Some reasonable priors:
 
 --
 
-1. Cold (lifetime risk ~100%)
+1. Cold (lifetime risk ~99%)
 
 --
 
@@ -463,23 +697,25 @@ Some reasonable priors:
 
 --
 
-3. Gastroenteritis (lifetime risk ~100%)
+3. Gastroenteritis (lifetime risk ~99%)
 
 
 ---
 
 # Posterior
 
-1. High prior X high likelihood = most probable
+1. High prior x high likelihood = high posterior probability
 
 --
 
-2. Low prior X low likelihood = low probability
+2. Low prior x low likelihood = low posterior probability
 
 --
 
-3. High prior Xlow likelihood = low probability
+3. High prior x low likelihood = low posterior probability
 
 ---
 
 # Being a good consumer
+
+![:scale 100%](https://i.imgur.com/sgI72kT.jpg)
