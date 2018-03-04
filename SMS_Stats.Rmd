@@ -195,9 +195,7 @@ Which is more probable?
 
 ---
 
-## Being a skeptical statistical consumer
-
-Factors at odds with each other:
+## Competing factors
 
 1. Scientists & grant funding agencies want to have their research published
 2. Scientific journals and unversities want to gain publicity
@@ -209,11 +207,11 @@ Factors at odds with each other:
 
 ## Thinking critically about what you read
 
+### Every statistical story has context
+
+???
+
 https://www.livescience.com/3780-odds-dying.html
-
----
-
-## Every statistical story has context
 
 ---
 class: center
@@ -231,7 +229,7 @@ class: center
 
 ---
 
-## Association $\neq$ causation
+## Correlation $\neq$ causation
 
 .pull-left[
 ![:scale 100%](https://i.imgur.com/bNr4JAW.png)
@@ -243,7 +241,7 @@ class: center
 
 ---
 
-## Correlation vs. Causation
+## Causation
 
 Usually we are interested in causation.
 
@@ -252,7 +250,7 @@ Usually we are interested in causation.
 
 --
 
-Confounding variables (overall wealth) probably underlie the correlation.
+**Confounding variables** (overall wealth) probably underlie the correlation.
 
 - This is one of the main limitations of observational studies.
 
@@ -303,9 +301,10 @@ cor_choc <- paste("Correlation =", round(cor(CBE$choc, CBE$elec), 2))
 cor_beer <- paste("Correlation =", round(cor(CBE$beer, CBE$elec), 2))
 
 CBE %>% gather(key = "key", value = "value", -Date) %>% 
-  mutate(label = case_when(key == "choc" ~ "Chocolate\n(tons)",
-                           key == "beer" ~ "Beer\n(ML)",
-                           key == "elec" ~ "Electricity\n(million of kWh)")) %>% 
+  mutate(label = case_when(
+    key == "choc" ~ "Chocolate\n(tons)",
+    key == "beer" ~ "Beer\n(ML)",
+    key == "elec" ~ "Electricity\n(million of kWh)")) %>% 
   ggplot(aes(x = Date, y = value, color = label)) +
   geom_line(size = 1.5) +
   geom_vline(xintercept = as.Date("1975-1-1"), size = 1.5) +
@@ -333,9 +332,10 @@ cor_choc <- paste("Correlation =", round(cor(CBE$choc, CBE$elec), 2))
 cor_beer <- paste("Correlation =", round(cor(CBE$beer, CBE$elec), 2))
 
 CBE %>% gather(key = "key", value = "value", -Date) %>% 
-  mutate(label = case_when(key == "choc" ~ "Chocolate\n(tons)",
-                           key == "beer" ~ "Beer\n(ML)",
-                           key == "elec" ~ "Electricity\n(million of kWh)")) %>% 
+  mutate(label = case_when(
+    key == "choc" ~ "Chocolate\n(tons)",
+    key == "beer" ~ "Beer\n(ML)",
+    key == "elec" ~ "Electricity\n(million of kWh)")) %>% 
   ggplot(aes(x = Date, y = value, color = label)) +
   geom_line(size = 1.5) +
   geom_vline(xintercept = as.Date("1975-1-1"), size = 1.5) +
@@ -365,15 +365,18 @@ CBE %>% gather(key = "key", value = "value", -Date) %>%
 ```{r echo=FALSE, fig.height=6, fig.width=10}
 Year <- c(2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009)
 Idaho_Divorces <- c(5.5, 5.3, 5.3, 5.2, 5, 5, 5, 4.9, 4.8, 5)	
-Ski_Revenue <- c(1551, 1635, 1801, 1827, 1956, 1989, 2178, 2257, 2476, 2438)
+Ski_Revenue <- c(1551, 1635, 1801, 1827, 1956,
+                 1989, 2178, 2257, 2476, 2438)
 D <- tibble(Year, Idaho_Divorces, Ski_Revenue)
 
-cor_lab <- paste("Correlation =", round(cor(Idaho_Divorces, Ski_Revenue), 2))
+cor_lab <- paste("Correlation =",
+                 round(cor(Idaho_Divorces, Ski_Revenue), 2))
 
 D %>% gather(key = "key", value = "value", -Year) %>% 
-  mutate(label = if_else(key == "Idaho_Divorces",
-                         "Divorce Rate in Idaho\n(per 1000 people)",
-                         "Ski Facility Revenue\n(millions of dollars)")) %>% 
+  mutate(label = if_else(
+    key == "Idaho_Divorces",
+    "Divorce Rate in Idaho\n(per 1000 people)",
+    "Ski Facility Revenue\n(millions of dollars)")) %>% 
   ggplot(aes(x = Year, y = value, color = label)) +
   geom_point(size = 5) +
   geom_line(size = 2) +
@@ -385,10 +388,11 @@ D %>% gather(key = "key", value = "value", -Year) %>%
         axis.title.y = element_blank(),
         text = element_text(size = 20),
         axis.text = element_text(size = 18)) +
-  geom_text(data = data.frame(Year = 2007,
-                              label = "Divorce Rate in Idaho\n(per 1000 people)",
-                              value = 5.4),
-            label = cor_lab, size = 8)
+  geom_text(data = data.frame(
+    Year = 2007,
+    label = "Divorce Rate in Idaho\n(per 1000 people)",
+    value = 5.4),
+    label = cor_lab, size = 8)
 ```
 
 ---
@@ -415,7 +419,7 @@ D %>% gather(key = "key", value = "value", -Year) %>%
 - Controlled for age, smoking, education, follow-up time, passive smoking in childhood and, parental asthma
 
 .footnote[
-Bendtsen et al. (2007) Alcohol consumption and the risk of self-reported perennial and seasonal allergic rhinitis in young adult women in a population-based cohort study. *Clin Exp Allergy* 38: 1179-1185.
+Bendtsen et al. (2007) *Clin Exp Allergy* 38: 1179-1185.
 ]
 
 ---
@@ -449,7 +453,9 @@ $$\frac{523}{5870} = 9\%$$
 
 --
 
-Of that 9% who develop perennial AR, the comparison of >14 drinks per week relative to <1 drink per week, leads to a 78% increase in probability.
+Of that 9% who develop perennial AR:
+
+- the comparison of >14 drinks per week relative to <1 drink per week $\rightarrow$ 78% greater probability
 
 ---
 
@@ -473,7 +479,7 @@ Histamines can cause allergies and allergy-related symptoms
 
 ---
 
-## "Alcohol Worsens Allergies"
+## Alcohol Worsens Allergies?
 
 ![](https://i.imgur.com/fAqxsVI.png)
 
@@ -488,48 +494,137 @@ Histamines can cause allergies and allergy-related symptoms
 
 ---
 
-## "Alcohol Worsens Allergies"
+## Alcohol Worsens Allergies?
 
 .center[
 ![:scale 100%](https://i.imgur.com/qzL0Ely.png)
 ]
 
-Smoking 15 or more cigarettes a day reduces the likelihood of AR.
+Smoking 15 or more cigarettes a day reduces the likelihood of seasonal AR.
 
 ---
 
-# Childhood mortality
-
-
----
-
-# Cancer Food Additives
-
----
-
-# Foods and allergies
-
----
-
-# Is most published research false?
-
----
-
-# The perils of null hypothesis testing
-
----
-
-# Chimera of Fisher and Neyman/Pearson
-
-![](https://i.imgur.com/8MATapS.jpg)
-
----
-
-# Garden of forking paths
+## Garden of forking paths
 
 ![](https://i.imgur.com/NEmGfdS.jpg)
 
 ---
+
+## Childhood mortality
+
+???
+
+    - https://www.healthaffairs.org/doi/10.1377/hlthaff.2017.0767
+    - https://www.vox.com/health-care/2018/1/8/16863656/childhood-mortality-united-states
+    - http://www.marketwatch.com/news/story.asp?guid=%7B098923D8-E0D4-11E7-883A-D1B26B4737ED%7D&siteid=rss&rss=1
+    - http://ct.moreover.com/?a=32986729376&p=1pl&v=1&x=yCG_f0VEvLx3I_deC2GmSA
+    - "Kids in America have a higher mortality rate than many other wealthy countries"
+    - "Why the United States is 'the most dangerous of wealthy nations for a child to be born into'"
+    - "US babies are 76 percent more likely to die in first year than babies in other rich countries"
+    - "America: The Most Dangerous Wealthy Nation for Kids in The World"
+    - "U.S. lags behind peers in fighting child mortality"
+    - "US has worst child mortality rate among 20 rich nations"
+    - "'This Study Should Alarm Everyone': US Child Mortality Rate 70% Higher Than Other Wealthy Nations"
+    - "U.S. is the 'most dangerous' wealthy country for a child to be born into, study finds"
+
+---
+
+## Cancer Food Additives
+
+???
+
+    - http://www.bmj.com/content/360/bmj.k322
+    - http://www.bbc.com/news/health-43064290
+    - https://www.cnn.com/2018/02/14/health/ultra-processed-foods-cancer-study/index.html
+    - https://www.cnbc.com/2018/02/15/study-ultra-processed-foods-like-chicken-nuggets-linked-to-cancer.html
+    - http://time.com/5157885/processed-foods-cancer/
+
+---
+
+## Antacid Pregnancy
+
+???
+
+    - http://pediatrics.aappublications.org/content/early/2018/01/09/peds.2017-0889
+    - https://www.nytimes.com/2018/01/11/well/family/antacids-during-pregnancy-tied-to-asthma-in-children.html
+
+---
+
+## Is most published research false?
+
+![:scale 100%](https://i.imgur.com/EC262ia.png)
+
+---
+
+## The perils of null hypothesis testing
+
+**P-values**:
+
+> What is the probability of observing these results if the null hypothesis were true?
+
+---
+
+## Statistical chimeras
+
+![:scale 28%](https://i.imgur.com/8MATapS.jpg)![:scale 37%](https://i.imgur.com/yNqqwCY.jpg)![:scale 33%](https://i.imgur.com/PzsN7V4.jpg)
+
+Fisher: *P*-values
+
+Neyman-Pearson: Choosing from among statistical models
+
+---
+
+## Familywise error rate
+
+```{r echo=FALSE, fig.height=6, fig.width=10}
+calcFWER <- function(k, alpha){
+  return(round(1 - (1 - alpha) ^ k, 3))
+}
+k <- seq(1, 200, by = 1)
+alphas <- c(0.05, 0.01, 0.001)
+out <- matrix(NA, ncol = length(alphas))
+for (i in alphas) {
+  FWER <- calcFWER(k, i)
+  alpha <- rep(i, times = length(k))
+  tmp <- cbind(alpha, k, FWER)
+  out <- rbind(out, tmp)
+}
+FWERs <- as.data.frame(out)
+FWERs$alpha <- as.factor(FWERs$alpha)
+ggplot(FWERs, aes(x = k, y = FWER, color = alpha)) +
+  geom_hline(yintercept = 1, lty = "dotted") +
+  geom_path(lwd = 2) +
+  ylab("Familywise Error Rate") +
+  xlab("Number of P-values") +
+  scale_color_manual(values = wes_palette("Moonrise3"),
+                     name = "Alpha",
+                     breaks = c("0.05", "0.01", "0.001")) +
+  theme(text = element_text(size = 20),
+        axis.text = element_text(size = 18))
+
+```
+
+---
+
+## Is most published research false?
+
+1. Garden of forking paths
+2. Researcher publication bias
+3. Journal publication bias
+4. **Science-wide** error rate
+
+---
+
+## (Non)Reproducibility
+
+1. Real effect, opposite direction
+2. Real effect, smaller magnitude
+3. No effect despite having previously found one
+
+Usually we think of the inability to reproduce an experiment as resulting from poor experimental design or errors in data collection.
+
+---
+class: center, middle
 
 # Is all hope lost?
 

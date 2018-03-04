@@ -5,31 +5,3 @@ Statistics are a fundamental part of our lives and impact decisions that we make
 https://www.wiley.com/en-us/Introduction+to+Bayesian+Statistics%2C+3rd+Edition-p-9781118593226
 
 https://strengejacke.files.wordpress.com/2017/12/bayesian-regression-models.pdf
-
-Childhood mortality
-
-    - https://www.healthaffairs.org/doi/10.1377/hlthaff.2017.0767
-    - https://www.vox.com/health-care/2018/1/8/16863656/childhood-mortality-united-states
-    - http://www.marketwatch.com/news/story.asp?guid=%7B098923D8-E0D4-11E7-883A-D1B26B4737ED%7D&siteid=rss&rss=1
-    - http://ct.moreover.com/?a=32986729376&p=1pl&v=1&x=yCG_f0VEvLx3I_deC2GmSA
-    - "Kids in America have a higher mortality rate than many other wealthy countries"
-    - "Why the United States is 'the most dangerous of wealthy nations for a child to be born into'"
-    - "US babies are 76 percent more likely to die in first year than babies in other rich countries"
-    - "America: The Most Dangerous Wealthy Nation for Kids in The World"
-    - "U.S. lags behind peers in fighting child mortality"
-    - "US has worst child mortality rate among 20 rich nations"
-    - "'This Study Should Alarm Everyone': US Child Mortality Rate 70% Higher Than Other Wealthy Nations"
-    - "U.S. is the 'most dangerous' wealthy country for a child to be born into, study finds"
-
-Antacid Pregnancy
-
-    - http://pediatrics.aappublications.org/content/early/2018/01/09/peds.2017-0889
-    - https://www.nytimes.com/2018/01/11/well/family/antacids-during-pregnancy-tied-to-asthma-in-children.html
-
-Cancer Food Additives
-
-    - http://www.bmj.com/content/360/bmj.k322
-    - http://www.bbc.com/news/health-43064290
-    - https://www.cnn.com/2018/02/14/health/ultra-processed-foods-cancer-study/index.html
-    - https://www.cnbc.com/2018/02/15/study-ultra-processed-foods-like-chicken-nuggets-linked-to-cancer.html
-    - http://time.com/5157885/processed-foods-cancer/
