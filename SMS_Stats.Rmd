@@ -580,7 +580,98 @@ Smoking 15 or more cigarettes a day reduces the likelihood of seasonal AR.
 
 ## Garden of forking paths
 
+.center[
 ![](https://i.imgur.com/NEmGfdS.jpg)
+]
+
+---
+
+## Is most published research false?
+
+![:scale 100%](https://i.imgur.com/EC262ia.png)
+
+
+- "Statistically significant" results are more likely to be published.
+- Not all these results can be "true positives".
+
+---
+
+## P-values and the peril of null hypothesis testing
+
+> What is the probability of observing these data if the null hypothesis were true?
+
+- Null hypothesis is a straw-man.
+
+.center[
+![:scale 70%](https://i.imgur.com/fm5528s.png)
+]
+
+---
+
+## Statistical chimeras
+
+![:scale 28%](https://i.imgur.com/8MATapS.jpg)![:scale 37%](https://i.imgur.com/yNqqwCY.jpg)![:scale 33%](https://i.imgur.com/PzsN7V4.jpg)
+
+Fisher: *P*-values as a ad hoc indicator
+
+Neyman & Pearson: Choosing from among statistical models
+
+---
+
+## Is most published research false?
+
+1. Garden of forking paths
+2. Researcher publication bias
+3. Journal publication bias
+4. **Science-wide** error rate
+
+---
+
+## (Non-)Reproducibility
+
+1. Real effect, opposite direction
+2. Real effect, smaller magnitude
+3. No effect despite having previously found one
+
+Usually we think of the inability to reproduce an experiment as resulting from poor experimental design or errors in data collection.
+
+---
+class: center, middle
+
+# Is all hope lost?
+
+---
+
+## Increased awareness
+
+---
+
+## Bayesian analysis
+
+---
+
+## ASA statement on P-values (2016)
+
+- P-values *can* indicate how incompatible the data are with a specified statistical model.
+- P-values do not measure the probability that the studied hypothesis is true, or the probability that the data were produced by random chance alone.
+- Scientific conclusions and business or policy decisions should not be based only on whether a P-value passes a specific threshold.
+- A P-value, or statistical significance, does not measure the size of an effect or the importance of a result.
+
+---
+
+## Being a good science consumer
+
+- Be skeptical
+- Think about the source(s)
+- Dig deep
+- Think about the base rate
+
+---
+
+![:scale 100%](https://i.imgur.com/sgI72kT.jpg)
+---
+
+---
 
 ---
 
@@ -621,74 +712,4 @@ Smoking 15 or more cigarettes a day reduces the likelihood of seasonal AR.
 
     - http://pediatrics.aappublications.org/content/early/2018/01/09/peds.2017-0889
     - https://www.nytimes.com/2018/01/11/well/family/antacids-during-pregnancy-tied-to-asthma-in-children.html
-
----
-
-## Is most published research false?
-
-![:scale 100%](https://i.imgur.com/EC262ia.png)
-
----
-
-## The perils of null hypothesis testing
-
-**P-values**:
-
-> What is the probability of observing these results if the null hypothesis were true?
-
----
-
-## Statistical chimeras
-
-![:scale 28%](https://i.imgur.com/8MATapS.jpg)![:scale 37%](https://i.imgur.com/yNqqwCY.jpg)![:scale 33%](https://i.imgur.com/PzsN7V4.jpg)
-
-Fisher: *P*-values
-
-Neyman-Pearson: Choosing from among statistical models
-
----
-
-## Is most published research false?
-
-1. Garden of forking paths
-2. Researcher publication bias
-3. Journal publication bias
-4. **Science-wide** error rate
-
----
-
-## (Non-)Reproducibility
-
-1. Real effect, opposite direction
-2. Real effect, smaller magnitude
-3. No effect despite having previously found one
-
-Usually we think of the inability to reproduce an experiment as resulting from poor experimental design or errors in data collection.
-
----
-class: center, middle
-
-# Is all hope lost?
-
----
-
-## ASA statement on P-values (2016)
-
-- P-values *can* indicate how incompatible the data are with a specified statistical model.
-- P-values do not measure the probability that the studied hypothesis is true, or the probability that the data were produced by random chance alone.
-- Scientific conclusions and business or policy decisions should not be based only on whether a P-value passes a specific threshold.
-- A P-value, or statistical significance, does not measure the size of an effect or the importance of a result.
-
----
-
-## Being a good consumer
-
-- Be skeptical
-- Think about the source(s)
-- Dig deep
-- Think about the base rate
-
----
-
-![:scale 100%](https://i.imgur.com/sgI72kT.jpg)
 
