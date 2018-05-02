@@ -112,8 +112,9 @@ Abraham de Moivre (1667-1754)
 
 1. Apply for a mortgage, car loan, or credit card
 1. Buy life insurance
-1. Go to the doctor
-1. Take any medicine
+1. Go to the doctor or take any medicine
+1. Receive an email
+1. Use a credit card
 1. Go in a building, drive across a bridge
 
 ---
@@ -264,6 +265,8 @@ $$
 
 .center[
 **Twice a small number is still a small number**
+
+Relative risk vs. Absolute risk
 ]
 
 ---
@@ -635,11 +638,15 @@ Neyman & Pearson: Choosing from among statistical models
     - Not considering "null hypotheses"
     - Straw man hypothesis (no difference, no effect)
 
+.center[
+![:scale 75%](https://i.imgur.com/tedA6Ts.png)
+]
+
 ---
 
 ## Is most published research false?
 
-1. Garden of forking paths
+1. Cherry picking and the garden of forking paths
 2. Researcher publication bias
 3. Journal publication bias
 4. **Science-wide** error rate
@@ -672,20 +679,8 @@ class: center, middle
 ## Journals take a stand
 
 - In 1986, the *American Journal of Public Health* told all researchers wanting to publish in the journal that he would no longer accept results based on P-values
-    - ...and then backed down 2 years later)
+    - ...and then backed down 2 years later
 - *Basic and Applied Social Psychology* banned P-values in 2015
-
----
-
-## Preregistration
-
-- "Register" your planned analysis before seeing the data
-- Journal buy-in
-    - Agree to publish interesting research questions, regardless of the result
-
-.center[
-![:scale 90%](https://i.imgur.com/S1iHGwf.png)
-]
 
 ---
 
@@ -698,7 +693,15 @@ class: center, middle
 
 ---
 
-## Bayesian analysis
+## Preregistration
+
+- "Register" your planned analysis before *seeing the data*
+- Journal buy-in
+    - Agree to publish interesting research questions, regardless of the result
+
+.center[
+![:scale 90%](https://i.imgur.com/S1iHGwf.png)
+]
 
 ---
 
@@ -708,6 +711,24 @@ class: center, middle
 - Think about the source(s)
 - Dig deep
 - Think about the base rate
+
+---
+
+## Thinking about rates
+
+.center[
+![:scale 100%](https://i.imgur.com/FXY6wkp.png)
+]
+
+
+---
+
+## Thinking about rates
+
+.center[
+![:scale 100%](https://i.imgur.com/1zzulFd.png)
+]
+
 
 ---
 class: center
