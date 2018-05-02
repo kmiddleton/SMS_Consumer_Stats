@@ -714,7 +714,7 @@ class: center, middle
 
 ---
 
-## Thinking about rates
+## Visualizing rates
 
 .center[
 ![:scale 100%](https://i.imgur.com/FXY6wkp.png)
@@ -723,7 +723,7 @@ class: center, middle
 
 ---
 
-## Thinking about rates
+## Visualizing rates
 
 .center[
 ![:scale 100%](https://i.imgur.com/1zzulFd.png)
