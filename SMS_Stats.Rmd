@@ -98,6 +98,16 @@ absolutely." (Aristotle, *Rhetoric*)
 
 ---
 
+## In praise of gambling
+
+.center[
+![:scale 44%](https://i.imgur.com/C4LOeAK.jpg)![:scale 40%](https://i.imgur.com/x0d2CX4.jpg)
+
+Abraham de Moivre (1667-1754)
+]
+
+---
+
 ## Probability impacts you
 
 1. Apply for a mortgage, car loan, or credit card
@@ -191,7 +201,7 @@ Probabilities *unconditioned* on any other information
 3. Pr[*Death by Lightning*] $\approx$ 5 / 500,000
 5. Pr[*Death by Venomous Snake*] $\approx$ 1 / 500,000
 
-Some will never change. Some will.
+Some rates will never change. Some will.
 
 --
 
@@ -227,12 +237,13 @@ Some will never change. Some will.
 - 1 in 8 may have completely stopped taking pills
 - Others switched mid-cycle
 
-The results:
+The outcomes:
 
 - 26,000 more babies in England and Wales the next year
 - £21 million for maternity care and £46 million for abortion provision
 - Lives saved: "maybe one"
-- Lives cost: >30 maternal deaths during childbirth (8.2 / 100,000) 
+- Lives lost: ~30 maternal deaths during childbirth
+    - 8.2 deaths / 100,000 live births
 
 ---
 
@@ -240,7 +251,7 @@ The results:
 
 Base rate of thrombosis on "old" pills:
 $$
-1 / 7000
+1 / 7000 = 0.014\%
 $$
 
 --
@@ -248,7 +259,7 @@ $$
 Rate of thrombosis on "new" pills:
 
 $$
-2 / 7000
+2 / 7000 = 0.029\%
 $$
 
 .center[
@@ -262,7 +273,7 @@ class: center, middle
 
 ---
 
-## Competing factors
+## Contributing factors
 
 - Scientists want to learn about the world
 - Scientists and funding agencies want to have their research published
@@ -306,13 +317,11 @@ class: center
 
 ## Correlation $\neq$ Causation
 
-.pull-left[
-![:scale 100%](https://i.imgur.com/bNr4JAW.png)
+.center[
+![:scale 100%](https://i.imgur.com/50b58c1.png)
 ]
 
-.pull-right[
 "Figures obtained by the BBC under the Freedom of Information Act found the number of prescriptions for the most common group of antidepressants rose by 43 per cent during the period covering the banking crisis and housing crash."
-]
 
 ---
 
@@ -530,7 +539,7 @@ $$\frac{523}{5870} = 9\%$$
 
 Of that 9% who develop perennial AR:
 
-- the comparison of >14 drinks per week relative to <1 drink per week $\rightarrow$ 78% greater probability
+- The comparison of >14 drinks per week relative to <1 drink per week $\rightarrow$ 78% greater probability of AR
 
 ---
 
@@ -560,12 +569,13 @@ Histamines can cause allergies and allergy-related symptoms
 
 - Only >14 drinks compared to <1 drink is "significant"
 - Only 32 / 523 (6%) were in this group
+    - In the original sample: 32 / 5870 (0.55%)
+    - What is the odds ratio of AR in the >14 drinks groups across the whole sample?
 
---
+---
+class: center
 
-.center[
-![:scale 60%](https://i.imgur.com/XbS8Hiq.png)
-]
+![:scale 100%](https://i.imgur.com/XbS8Hiq.png)
 
 ---
 
@@ -575,7 +585,7 @@ Histamines can cause allergies and allergy-related symptoms
 ![:scale 100%](https://i.imgur.com/qzL0Ely.png)
 ]
 
-Smoking 15 or more cigarettes a day reduces the likelihood of seasonal AR.
+Smoking 15 or more cigarettes a day **reduces** the likelihood of seasonal AR.
 
 ---
 
@@ -587,7 +597,7 @@ Smoking 15 or more cigarettes a day reduces the likelihood of seasonal AR.
 
 ---
 
-## Is most published research false?
+## Crisis in scientific research
 
 ![:scale 100%](https://i.imgur.com/EC262ia.png)
 
@@ -601,21 +611,29 @@ Smoking 15 or more cigarettes a day reduces the likelihood of seasonal AR.
 
 > What is the probability of observing these data if the null hypothesis were true?
 
-- Null hypothesis is a straw-man.
-
 .center[
 ![:scale 70%](https://i.imgur.com/fm5528s.png)
 ]
 
 ---
 
-## Statistical chimeras
+## Chimeras
 
 ![:scale 28%](https://i.imgur.com/8MATapS.jpg)![:scale 37%](https://i.imgur.com/yNqqwCY.jpg)![:scale 33%](https://i.imgur.com/PzsN7V4.jpg)
 
 Fisher: *P*-values as a ad hoc indicator
 
 Neyman & Pearson: Choosing from among statistical models
+
+---
+
+## The last ~50 years...
+
+1. Fisher's P < 0.05 is "significant"
+    - Fisher though 0.05 was "good enough"
+2. Neyman and Pearson's hypothesis testing
+    - Not considering "null hypotheses"
+    - Straw man hypothesis
 
 ---
 
