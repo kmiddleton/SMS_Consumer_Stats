@@ -633,7 +633,7 @@ Neyman & Pearson: Choosing from among statistical models
     - Fisher though 0.05 was "good enough"
 2. Neyman and Pearson's hypothesis testing
     - Not considering "null hypotheses"
-    - Straw man hypothesis
+    - Straw man hypothesis (no difference, no effect)
 
 ---
 
@@ -663,9 +663,29 @@ class: center, middle
 
 ## Increased awareness
 
+.center[
+![:scale 70%](https://i.imgur.com/d7zgh8M.png)
+]
+
 ---
 
-## Bayesian analysis
+## Journals take a stand
+
+- In 1986, the *American Journal of Public Health* told all researchers wanting to publish in the journal that he would no longer accept results based on P-values
+    - ...and then backed down 2 years later)
+- *Basic and Applied Social Psychology* banned P-values in 2015
+
+---
+
+## Preregistration
+
+- "Register" your planned analysis before seeing the data
+- Journal buy-in
+    - Agree to publish interesting research questions, regardless of the result
+
+.center[
+![:scale 90%](https://i.imgur.com/S1iHGwf.png)
+]
 
 ---
 
@@ -678,6 +698,10 @@ class: center, middle
 
 ---
 
+## Bayesian analysis
+
+---
+
 ## Being a good science consumer
 
 - Be skeptical
@@ -686,8 +710,10 @@ class: center, middle
 - Think about the base rate
 
 ---
+class: center
 
 ![:scale 100%](https://i.imgur.com/sgI72kT.jpg)
+
 ---
 
 ---
