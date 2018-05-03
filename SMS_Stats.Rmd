@@ -720,7 +720,6 @@ class: center, middle
 ![:scale 100%](https://i.imgur.com/FXY6wkp.png)
 ]
 
-
 ---
 
 ## Visualizing rates
@@ -729,9 +728,10 @@ class: center, middle
 ![:scale 100%](https://i.imgur.com/1zzulFd.png)
 ]
 
-
 ---
 class: center
+
+## Questions?
 
 ![:scale 100%](https://i.imgur.com/sgI72kT.jpg)
 
